@@ -1,0 +1,29 @@
+<div class="main-container">
+
+    <div id="container">
+        <aside>
+            <header>
+                <input type="text" placeholder="search">
+            </header>
+            <ul>
+                <li *ngFor="let user of matches; index as i">
+                    <a [routerLink]="[{outlets : {conversation: ['chat',user.id] } }]">
+                        <div class="img-box">
+                            <img class="user-img" [src]="user.profilePic" alt="" (error)="loadDefault(i)">
+                        </div>
+                        <div>
+                            <h2>{{ user.firstname }} {{ user.lastname }}</h2>
+                            <h3>
+                                <span class="status red"></span>
+                                offline
+                            </h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <router-outlet name="conversation"></router-outlet>
+    </div>
+
+</div>

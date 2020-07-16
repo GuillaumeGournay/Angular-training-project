@@ -1,0 +1,48 @@
+<div class="main-container">
+  <div class="row justify-content-center">
+
+    <div class="col-12 col-sm-10 col-xl-6">
+      <!-- Default form contact -->
+      <form class="text-center border border-light pt-5" [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+      
+          <h2 class="mb-4">Contactez-nous</h2>
+        
+          <!-- Name -->
+          <input type="text" formControlName="contactFormName" id="defaultContactFormName" mdbInput
+            class="form-control mb-4" placeholder="Nom">
+        
+          <!-- Email -->
+          <input type="email" formControlName="contactFormEmail" id="defaultContactFormEmail" mdbInput
+            class="form-control mb-4" placeholder="E-mail">
+        
+          <!-- Subject -->
+          <label>Subject</label>
+          <select formControlName="contactFormSubjects" class="browser-default custom-select mb-4">
+            <option value="" disabled>Raison de la demande</option>
+            <option value="1" selected>Problème lié au compte</option>
+            <option value="2">Signaler un dysfonctionnement</option>
+            <option value="3">Réclamation</option>
+          </select>
+        
+          <!-- Message -->
+          <div class="form-group txt-input">
+            <textarea formControlName="contactFormMessage" class="form-control rounded-0" mdbInput id="exampleFormControlTextarea2"
+              rows="3" placeholder="Message"></textarea>
+          </div>
+        
+          <!-- Copy -->
+          <!-- <mdb-checkbox [default]="true" class="mb-4">Send me a copy of this message</mdb-checkbox> -->
+        
+          <!-- Send button -->
+          <button mdbBtn type="submit" 
+          mdbBtn 
+          class="relative waves-light mt-2 bgc-blue" 
+          mdbWavesEffect>Envoyer</button>
+        
+        </form>
+        <!-- Default form contact -->
+    </div>
+  
+
+  </div>
+</div>

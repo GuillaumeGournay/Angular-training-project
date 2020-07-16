@@ -1,0 +1,40 @@
+<div class="main-container">
+    <div class="row d-flex justify-content-center mt-4">
+      <div class="col-xl-6 col-md-9 col-12">
+          <h2>Editer un tag</h2>
+          <button
+            type="button"
+            mdbBtn
+            class="relative waves-light bgc-blue back-button"
+            mdbWavesEffect
+            [routerLink]="['/admin/tags']"
+          >
+            revenir à la liste
+          </button>
+  
+        <form (ngSubmit)="onSubmit()">
+          <div class="md-form">
+            <input
+            mdbInput
+            type="text"
+            name="name"
+            autocomplete="off"
+            id="form1"
+            class="form-control"
+            [(ngModel)]="tag.name"
+          />
+          <label for="form1" class="">Nom du tag</label>
+
+          <button
+            type="submit"
+            mdbBtn
+            class="relative waves-light bgc-blue send-button"
+            mdbWavesEffect
+          >
+            editer
+          </button>
+         </div>
+        </form>
+      </div>
+  </div>
+</div>

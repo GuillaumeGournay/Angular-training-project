@@ -1,0 +1,114 @@
+// ********** GLOBAL STYLES **********
+
+html * {
+    font-family: 'Montserrat', sans-serif !important;
+    color: #333333; 
+}
+
+body{
+    // background-color: #FBFBFB; 
+    margin: 0px;
+    padding: 0px;
+}
+
+// TEXT STYLE
+h1 {	
+    font-weight: 700;
+	  font-size: 4em;
+	  letter-spacing: -3px;
+    color: #262626;
+    text-align: center; 
+    margin: 50px 50px;
+}
+
+h2 {	
+    font-weight: 700;
+	  font-size: 1.8em;
+	  letter-spacing: -1px;
+    color: #262626; 
+    margin-top: 20px;
+}
+
+h3 {	
+    font-weight: 700;
+	  font-size: 1.2em;
+    color: #262626; 
+}
+
+p { 
+    font-weight: 600; 
+    color: #333333; 
+}
+
+a {
+    font-weight: 600 !important; 
+    color: #FF7104; 
+}
+
+a:hover {
+    color: #FF7104 !important; 
+}
+
+// ********** GLOBAL CLASSES **********
+
+// CONTAINER
+.main-container {
+    min-height: 65vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+// BUTTON STYLE
+button {
+    font-weight: 600 !important;
+    color: white !important;
+}
+
+// TEXT STYLE
+.title-light { 
+    color: #FFFFFF; 
+}
+
+.title-orange { 
+    color: #FF7104; 
+}
+
+.title-blue { 
+    color: #093180; 
+}
+
+.txt-light { 
+    color: #E1E1E1; 
+}
+
+// BACKGROUND COLOR
+.bgc-orange { 
+    background-color: #FF7104 !important; 
+}
+
+.bgc-blue { 
+    background-color: #093180 !important; 
+}
+
+// INPUT
+input:focus {
+    border-bottom: 1px solid #093180 !important;
+    box-shadow: 0 1px 0 0 #093180 !important;
+}
+
+.md-form input:focus:not([readonly]) + label {
+    color: #093180 !important;
+}
+
+// LOGO
+.logo {	
+    font-weight: 800;
+    font-size: 4.5em;
+    letter-spacing: -4.5px;
+    text-shadow: 3px 3px 6px #000000; 
+}
+
+.logo-footer {	
+    color: white; 
+}

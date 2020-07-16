@@ -1,0 +1,274 @@
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+h2 {
+    font-weight: 700;
+    font-size: 3.2em;
+    letter-spacing: -2.5px;
+    margin-top: 30px;
+}
+.main-container{
+    min-height: 65vh;
+    margin: 0;
+    padding: 0 0 50px 0;
+}
+.firstcontainer{
+    display: flex;
+    flex-direction: row;    //c'est ce qui définit l'AXE PRINCIPAL
+    align-items: center;  
+    
+}
+
+.box{
+    box-sizing: border-box;
+    padding: 50px;
+
+}
+
+@media screen and (max-width:768px){ // responsive
+
+    .firstcontainer{
+        flex-direction: column; /* on refait passer les box à la verticale*/
+        align-items: center;
+        min-height: 100%;
+    }
+    .box{
+        padding-right: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .box1 {
+        padding-left: 0px !important;
+    }
+    .box2 {
+        padding-right: 0px !important;
+     
+    }
+    .img-presentation,
+    .bgc-blue
+    {
+        display: none;
+    }
+    
+
+        
+}
+    
+.img-presentation{
+    position: absolute;
+    width: 300px;
+    margin-top: 49px;
+    height: 300px;
+    z-index: 2;
+}
+
+.bgc-blue{
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin-top: 76px;
+    margin-left: 26px;
+    z-index: 1;
+}
+
+.box1{
+    margin-bottom: 50px;
+    padding-left: 150px;
+    z-index: 1;
+}
+.box2 {
+    padding-right: 150px;
+}
+.secondcontainer{
+    display: flex;
+    flex-direction: row;    //c'est ce qui définit l'AXE PRINCIPAL
+    align-items: center;  
+    
+}
+@media screen and (max-width:768px){ // responsive
+
+    .secondcontainer{
+        flex-direction: column; /* on refait passer les box à la verticale*/
+        align-items: center;
+        min-height: 100%;
+        
+    }
+    .background-orange,
+    .promo-abo,
+    .star-logo
+    {
+        display: none;
+    }
+    .box{
+        padding-right: 0px !important;
+        margin-bottom: 0px !important;
+    }
+    .box3{
+        padding-left: 0px !important;
+    }
+    .box4 {
+        padding-left: 0px !important;
+       
+    }
+    
+    .title-comment {
+        display: none;
+    }
+}
+
+.background-orange{
+    background-image: url("../../../assets/img/bgc-orange-new.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 100%;
+    height: 85vh;
+    margin-top: -200px;
+    z-index: 0;
+    padding-bottom: 150px;
+}
+
+.bgc-card {
+    position: relative;
+    background-color: #093180;
+    width: 420px;
+    height: 260px;
+    margin-top: -120px;
+    border-radius: 2%;
+    z-index: 1;
+}
+
+.box3{
+    padding-left: 150px;
+}
+.box4 {
+    position: relative;
+    padding-right: 150px;
+    margin-top: -66px;
+    z-index: 1;
+}
+.title-orange,
+.title-blue
+{
+    text-shadow: 1px 1px 2px black;
+}
+
+.btn {
+    display: block;
+    margin : auto;
+    height: 46.3167px !important;   
+}
+
+.profil-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-top: -35px;
+    margin-left: 26px;
+}
+
+.bedroom{
+    width: 150px;
+    height: 100px;
+    border-radius: 3%;
+}
+
+.bed-1{
+    margin-top: 10px;
+    margin-left: 27px;
+}
+
+.bed-2{
+    margin-top: -127px;
+    margin-left: 223px;
+}
+
+.infos{
+    margin-top: -8px;
+    margin-left: -12px;
+}
+
+.card-identity{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+.list{
+    padding: 20px;
+}
+
+.list-etapes, 
+.promo-abo
+{
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #262626; 
+}
+
+.list-card{
+    font-weight: 600;
+    padding: 0px; 
+}
+
+.list-container{
+    margin-top: -144px;
+    margin-left: 138px;
+    list-style: none;
+}
+
+.star-logo{
+    width: 30px;
+    height: 30px;
+    margin-top: 55px;
+    margin-left: -48px;
+}
+.promo-abo{
+    margin-top: -40px;
+}
+.title-comment{
+    padding-top: 100px;;
+}
+
+
+.card-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+
+.card-body{
+    padding: 10px;
+    // min-width: 200px;
+    // max-width: 30%;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+    border-radius: 4%;
+}
+
+
+blockquote {
+    display: block;
+    padding: 1.5em 0 0.5em;
+    margin: 1.5em 0;
+    position: relative;
+    text-align: center;
+}
+
+  blockquote:before {
+    content: '\201C';
+    position: absolute;
+    top: -0.2em;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 3rem;
+    height: 2rem;
+    font: 6em/1.08em 'PT Sans', sans-serif;
+    color: #FF7104;
+  
+  }

@@ -1,0 +1,55 @@
+<div class="main-container">
+    <div class="row d-flex justify-content-center mt-4">
+      <div class="col-xl-6 col-md-9 col-12">
+          <h2>Editer une ville</h2>
+          <button
+            type="button"
+            mdbBtn
+            class="relative waves-light bgc-blue back-button"
+            mdbWavesEffect
+            [routerLink]="['/admin/cities']"
+          >
+            revenir à la liste
+          </button>
+  
+        <form (ngSubmit)="onSubmit()">
+          <div class="md-form">
+            <input
+              mdbInput
+              type="text"
+              name="name"
+              autocomplete="off"
+              id="form1"
+              class="form-control"
+              [(ngModel)]="city.name"
+            />
+            <label for="form1" class="">Nom de ville</label>
+          </div>
+  
+          <div class="md-form">
+            <input
+              mdbInput
+              type="number"
+              name="postcode"
+              autocomplete="off"
+              id="form2"
+              class="form-control"
+              [(ngModel)]="city.postcode"
+            />
+            <label for="form2" class="">Code postal</label>
+  
+            <button
+              type="submit"
+              mdbBtn
+              class="relative waves-light bgc-blue send-button"
+              [disabled]="!city.name || !city.postcode"
+              mdbWavesEffect
+            >
+              éditer
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

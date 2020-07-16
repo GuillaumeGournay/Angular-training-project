@@ -1,0 +1,128 @@
+<div class="main-container">
+    <h1>Liste des témoignages</h1>
+  
+    <div class="row d-flex justify-content-center">
+      <div class="col-xl-9 col-lg-11 col-12">
+        <button
+          type="button"
+          mdbBtn
+          class="relative waves-light bgc-blue mb-2 top-button"
+          [routerLink]="['/admin/testimonies/add']"
+          mdbWavesEffect
+        >
+          + ajouter
+        </button>
+  
+        <div class="row d-flex">
+          <div class="col-12">
+            <div class="data-list data-list-title">
+              <div
+                class="row d-flex justify-content-between align-items-center row-title">
+                <div class="col-1">id</div>
+                <div class="col-3">Témoignages</div>
+                <div class="col-2">Détails</div>
+                <div class="col-2">Editer</div>
+                <div class="col-2">Supprimer</div>
+              </div>
+            </div>
+            <div class="data-list" *ngFor="let testimony of testimonies">
+              <div class="row d-flex justify-content-between align-items-center">
+                <div class="col-1">{{ testimony.id }}</div>
+                <div class="col-3 content">{{ testimony.content }}</div>
+                <div class="col-2">
+                  <button
+                    type="button"
+                    mdbBtn
+                    class="relative waves-light bgc-blue"
+                    (click)="basicModal.show()"
+                    mdbWavesEffect
+                    size="sm"
+                  >
+                    Détails
+                  </button>
+                </div>
+  
+                <div
+                  mdbModal
+                  #basicModal="mdbModal"
+                  class="modal fade"
+                  tabindex="-1"
+                  role="dialog"
+                  aria-labelledby="myBasicModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button
+                          type="button"
+                          class="close pull-right"
+                          aria-label="Close"
+                          (click)="basicModal.hide()"
+                        >
+                          <span aria-hidden="true">×</span>
+                        </button>
+                        <h4 class="modal-title w-100" id="myModalLabel">
+                          {{ testimony.content }}
+                        </h4>
+                      </div>
+                      <div class="modal-body d-flex justify-content-center">
+                        <ul>
+                          <li><span>id : </span>{{ testimony.id }}</li>
+                          <hr />
+                          <li><span>createdAt : </span>{{ testimony.createdAt }}</li>
+                          <hr />
+                          <li><span>updatedAt : </span>{{ testimony.updatedAt }}</li>
+                          <hr />
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button
+                          type="button"
+                          mdbBtn
+                          class="waves-light bgc-blue"
+                          aria-label="Close"
+                          (click)="basicModal.hide()"
+                          mdbWavesEffect
+                        >
+                          Fermer
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  
+                <div class="col-2">
+                  <button
+                    type="button"
+                    mdbBtn
+                    class="relative waves-light bgc-blue"
+                    [routerLink]="['/admin/testimonies/edit', testimony.id]"
+                    mdbWavesEffect
+                    size="sm"
+                  >
+                    éditer
+                  </button>
+                </div>
+  
+                <div class="col-2">
+                  <button
+                    type="button"
+                    mdbBtn
+                    color="danger"
+                    class="relative waves-light"
+                    (click)="deleteTestimony(testimony.id)"
+                    mdbWavesEffect
+                    size="sm"
+                  >
+                    Suppr
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

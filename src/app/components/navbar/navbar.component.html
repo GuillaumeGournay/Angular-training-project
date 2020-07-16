@@ -1,0 +1,57 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-xl navbar-light white sticky-top" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand navbar-logo ml-md-5" [routerLink]="['/home']">ProjetColoc</a></mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/home']">Accueil</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['/contact']">Contact</a>
+        </li>
+        <li class="nav-item dropdown" dropdown *ngIf="authService.user && authService.user.isAdmin">
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Back office<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/admin/genders']">Gérer les genres</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/admin/tags']">Gérer les tags</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/admin/users']">Gérer les utilisateurs</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/admin/testimonies']">Gérer les témoignages</a>
+            <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/admin/cities']">Gérer les villes</a>
+          </div>
+        </li>
+        <li>
+          <button mdbBtn type="button" size="sm" mdbWavesEffect class="bgc-orange" [routerLink]="['/matches']">Trouver un coloc</button>
+      </li>
+        
+    </ul>
+    
+    <!-- Links -->
+    <ul class="navbar-nav ml-auto">
+        <li class="mr-lg-5" *ngIf="!authService.user">
+            <button mdbBtn type="button" size="sm" mdbWavesEffect class="bgc-blue" [routerLink]="['/login']">Se connecter</button>
+        </li>
+        
+        <li class="nav-item dropdown mr-lg-5" dropdown *ngIf="authService.user">
+          <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+            Mon compte<span class="caret"></span></a>
+          <div *dropdownMenu class="dropdown-menu dropdown dropdown-menu-left dropdown-primary" role="menu">
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/profil']">Mon profil</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/matches']" >Mes matchs</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect [routerLink]="['/chat/list']">Mes conversations</a>
+              <a class="dropdown-item waves-light" mdbWavesEffect (click)="onLogout()">Se déconnecter</a>
+          </div>
+        </li>
+
+    </ul>
+<!-- Links -->
+</links>
+<!-- Collapsible content -->
+
+</mdb-navbar>
+<!--/.Navbar-->

@@ -1,0 +1,56 @@
+@import '../../admin.style.scss';
+
+.main-container {
+    padding: 50px 0;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.send-button {
+    margin: 20px 0 0 0;
+    display: block;
+}
+
+h2 {
+    margin: 0 25px 0 0;
+    padding: 0;
+}
+
+.back-button {
+    margin-left: 0;
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+.gender-input {
+    margin-top: 40px !important;
+}
+
+.city-input {
+    margin-top: 20px !important;
+}
+
+.select-label {
+    top: -20px !important;
+}
+
+.pp-label {
+    font-weight: 600;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: "Parcourir";
+}
+
+@media screen and (min-width:750px){
+    h2 {
+        display: inline-block;
+    }
+    .back-button {
+        margin-top: -5px;
+    }
+}

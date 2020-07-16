@@ -1,0 +1,28 @@
+<div class="main-container">
+</div>
+
+<div class="login-box" >
+    <h1>Connexion</h1>
+
+    <form class="md-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <input mdbInput type="text" id="email" class="form-control" placeholder="john.doe@gmail.com" formControlName="email" required>
+        <label for="email" class="">email</label>
+
+        <input mdbInput type="password" id="password" class="form-control" formControlName="password" required>
+        <label for="password" class="password-label">mot de passe</label>
+        <button 
+            type="submit" 
+            mdbBtn 
+            class="relative waves-light mt-2 bgc-blue"
+            [disabled]="!form.valid" 
+            mdbWavesEffect>
+                envoyer
+        </button>
+
+        <div class="login-bottom">
+            <p>Pas encore enregistré ?</p>
+            <a [routerLink]="['/register']">Créer un compte</a>
+        </div>
+    </form>
+    
+</div>

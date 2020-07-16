@@ -1,0 +1,72 @@
+<div class="main-container">
+  <div class="profil-container">
+    <h1>Mon profil</h1>
+    <div class="profil-box">
+
+      <h2 class="card-title">Mes informations</h2>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Prénom : <p>{{ connectedUser.firstname }}</p>
+        </li>
+        <li class="list-group-item">Nom : <p>{{ connectedUser.lastname }}</p>
+        </li>
+        <li class="list-group-item">Date de naissance :
+          <p>{{ connectedUser.birthdate }}</p>
+        </li>
+        <li class="list-group-item">Email : <p>{{ connectedUser.email }}</p>
+        </li>
+        <li class="list-group-item">Sexe : <p>{{ gender.name }}</p>
+        </li>
+        <li class="list-group-item">Ville : <p>{{ city.name }}</p>
+        </li>
+        <li class="list-group-item">Photo de profil :
+          <img class="profil-pic" [src]="connectedUser.profilePic" alt="photo de {{ connectedUser.firstname }}"
+            (error)="loadDefault()" />
+        </li>
+      </ul>
+
+      <!-- Button -->
+      <button mdbBtn class="relative waves-light mt-2 bgc-blue" [routerLink]="['/users/edit', connectedUser.id]"
+        mdbWavesEffect>
+        modifier
+      </button>
+
+      <div class="tags-select">
+        <h2>Mes tags</h2>
+        <h3 class="sel-tag-ttl">Tags sélectionnés :</h3>
+        <p class="tag-txt suppr-tag-txt">( Clique sur un tag pour le supprimer de ton profil )</p>
+        <div class="carte-tag">
+          <span class="tag-btn bgc-orange" *ngFor="let tag of userTags" (click)="deleteTag(tag)">{{tag.name}} x
+          </span>
+        </div>
+      </div>
+      <div class="tags-list">
+        <h3>Ajouter un tag :</h3>
+        <p>Choisis tes tags et trouve tes matches !</p>
+        <p class="tag-txt add-tag-txt">( Clique sur un tag pour l'ajouter à ton profil )</p>
+        <div class="carte-tag">
+          <span class="tag-btn bgc-blue" *ngFor="let tag of tags" (click)="addTag(tag)">{{ tag.name }} +
+          </span>
+        </div>
+      </div>
+
+      <!--Material textarea-->
+      <form *ngIf="!connectedUser.testimonyId" (ngSubmit)="onSubmit()">
+        <div class="form-group shadow-textarea testimony">
+            <h3>Laissez nous un témoignage de votre expérience !</h3>
+            <textarea [(ngModel)]="testimony.content" [ngModelOptions]="{standalone: true}" class="form-control z-depth-1 mt-3" id="content" rows="3" placeholder="Ecrivez votre témoignage ici..."></textarea>
+            <button
+            type="submit"
+            mdbBtn
+            class="relative waves-light bgc-blue send-button"
+            mdbWavesEffect
+            >
+            ajouter
+            </button>
+        </div>
+    </form>
+      <p *ngIf="connectedUser.testimonyId">Merci d'avoir témoigné !</p>
+    </div>
+  </div>
+
+  {{connectedUser.testimonyId}}

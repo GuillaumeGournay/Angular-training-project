@@ -1,0 +1,29 @@
+@import '../../admin.style.scss';
+
+.main-container {
+    margin-bottom: 50px;
+}
+
+.top-button {
+    margin-left: 0;
+}
+.data-list{
+    height: min-content;
+}
+
+.content {
+    overflow-wrap: break-word;
+    text-align: start;
+    line-height: normal;
+    font-weight: normal;
+    font-size: 0.8em;
+    padding: 10px 0;
+}
+
+h4 {
+    line-height: normal;
+    font-weight: normal;
+    font-size: 1em;
+    text-align: start;
+    padding: 25px 0 5px 15px;
+}

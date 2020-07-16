@@ -1,0 +1,85 @@
+<div class="main-container">
+
+    <div class="firstcontainer">
+        <div class="box box1">
+            <h2 class="title-orange">Projet Coloc, c'est quoi ?</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, enim ea? Eos officiis obcaecati
+                doloribus ut sed ducimus veritatis nostrum facilis atque ratione quibusdam a, quisquam ipsa ea saepe
+                eum?
+                Ab perferendis illo quidem iure nisi ex voluptate id voluptatibus eaque numquam exercitationem beatae
+                ullam nemo natus, consequatur molestiae eligendi quod, aspernatur quae aut? Facere voluptas harum
+                maiores iusto quas!
+                Vel pariatur natus, voluptates voluptate odio neque, dolorum maiores ducimus dolore voluptatem
+                asperiores quo hic ex tenetur nam vitae aliquid enim doloremque deserunt praesentium corporis. Mollitia
+                dolore consectetur.</p>
+        </div>
+        <div class="box box2">
+            <img class="img-presentation z-depth-4" src="assets/img/presentation.jpg" alt="presentation">
+            <div class="bgc-blue"></div>
+        </div>
+    </div>
+    <div class="back-container">
+        <div class="background-orange"></div>
+    </div>
+    <div class="secondcontainer">
+        <div class="box box3">
+            <div class="bgc-card z-depth-4">
+                <div>
+                    <img class="profil-pic z-depth-4" src="assets/img/profilpic.jpg" alt="profilpic">
+                </div>
+                <div class="card-identity">
+                    <h3 class="prenom title-light">Justine</h3>
+                    <p class="infos txt-light">23 ans - Lille</p>
+                </div>
+                <div>
+                    <ul class="list-container">
+                        <li class="list-card txt-light">Etudiant en droit</li>
+                        <li class="list-card txt-light">Aime le cinéma et la lecture</li>
+                        <li class="list-card txt-light">Fêtarde</li>
+                        <li class="list-card txt-light">Cherche quelqu'un pour compléter une coloc de 3 personnes</li>
+                    </ul>
+                </div>
+                <div>
+                    <img class="bedroom bed-1 z-depth-4" src="assets/img/bedroom.jpg" alt="bedroom">
+                </div>
+                <div>
+                    <img class="bedroom bed-2 z-depth-4" src="assets/img/bedroom.jpg" alt="bedroom">
+                </div>
+                <div>
+                    <img class="star-logo" src="assets/img/star1.png" alt="star">
+                    <p class="promo-abo">Augmente tes chances en souscrivant à l'abonnement !</p>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="box box4">
+            <h2 class="title-blue">Comment ça marche ?</h2>
+            <ol class="list">
+                <li class="list-etapes">Remplis ton profil</li>
+                <p>Définis les <span style="font-weight: 800;">tags</span> qui permettront de te matcher avec le coloc
+                    qui te correspond.</p>
+                <li class="list-etapes">Obtiens directement une liste de colocs potentiels</li>
+                <p>Les utilisateurs sont classés en fonction du nombre de <span style="font-weight: 800;">tags</span>
+                    que vous avez en commun</p>
+                <li class="list-etapes">Dialogue en direct avec tes futurs colocs</li>
+                <p>Profite du <span style="font-weight: 800;">chat online </span>pour faire connaissance et décider de
+                    la suite.</p>
+            </ol>
+            <!-- <button class="btn btn-dark z-depth-2">Trouver un coloc</button> -->
+            <button type="button" mdbBtn class="bgc-blue" mdbWavesEffect [routerLink]="['/matches']">Trouver un
+                coloc</button>
+        </div>
+    </div>
+    <div>
+        <h2 class="title-comment title-orange text-center">Témoignages</h2>
+        <div class="card-container">
+            <div class="card-body bgc-blue z-depth-2 lg-3" *ngFor="let testimony of testimonies">
+                <blockquote class="testimony">
+                    <p class="text-light mb-0 text"> {{ testimony.content }}</p>
+                </blockquote>
+            </div>
+        </div>
+
+    </div>
+</div>

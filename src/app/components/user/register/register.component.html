@@ -1,0 +1,64 @@
+<div class="main-container">
+</div>
+
+<div class="register-box" >
+    <h1>Inscription</h1>
+
+    <form class="md-form" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <input Input type="text" id="firstname" class="form-control" placeholder="John" formControlName="firstname" required>
+        <label for="firstname" class="firstname-label">prénom</label>
+
+        <input Input type="text" id="lastname" class="form-control" placeholder="Doe" formControlName="lastname" required>
+        <label for="lastname" class="lastname-label">nom</label> 
+ 
+        <input mdbInput type="date" id="birthdate" class="form-control" placeholder="1991/04/25" formControlName="birthdate" required>
+        <label for="birthdate" class="birthdate-label">date de naissance</label> 
+       
+        <input Input type="email" id="email" class="form-control" placeholder="john.doe@gmail.com" formControlName="email" required>
+        <label for="email" class="email-label">email</label>
+
+        <input mdbInput type="password" id="password" class="form-control" formControlName="password" required>
+        <label for="password" class="password-label">mot de passe</label> 
+
+
+        <label for="sexe" class="sexe-label">Sexe</label>
+        <select  class="gender-select browser-default custom-select mb-4" id="sexe" formControlName="genderId">
+            <option value="">Choose your option</option>
+            <option *ngFor="let gender of genders" [ngValue]="gender.id">
+            {{ gender.name }}
+            </option>
+        </select>
+
+        <label for="city" class="city-label">Ville</label>
+        <select  class="city-select browser-default custom-select mb-4" id="city" formControlName="cityId">
+            <option value="">Choose your option</option>
+            <option *ngFor="let city of cities" [ngValue]="city.id">
+            {{ city.name }} - {{ city.postcode }}
+            </option>
+        </select>
+
+        <div class="md-form">
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="form7" (change)="onFileChange($event)"
+                        name="profilePic" formControlName="profilePic">
+                    <label class="custom-file-label pp-label" for="form7">Photo de profil : {{ fileDataName }}</label>
+                </div>
+            </div>
+        </div>
+
+        <button 
+            type="submit" 
+            mdbBtn 
+            class="relative waves-light mt-2 send-btn bgc-blue"
+            mdbWavesEffect>
+                envoyer
+        </button>
+
+        <div class="reg-bottom">
+            <p>Déjà enregistré ?</p>
+            <a [routerLink]="['/login']">Trouve ton coloc ici !</a>
+        </div>
+    </form>
+    
+</div>

@@ -1,0 +1,27 @@
+@import '../../admin.style.scss';
+
+.main-container {
+    padding-top: 30px;
+}
+
+.send-button {
+    margin: 20px 0 0 0;
+}
+
+h2 {
+    margin: 0 25px 0 0;
+    padding: 0;
+}
+
+.back-button {
+    margin-left: 0;
+}
+
+@media screen and (min-width:750px){
+    h2 {
+        display: inline-block;
+    }
+    .back-button {
+        margin-top: -5px;
+    }
+}

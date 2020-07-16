@@ -1,0 +1,168 @@
+<!-- <div class="bg-container"></div> -->
+<div class="main-container">
+  <div class="sub-nav">
+    <a>Mon profil</a>
+    <a [routerLink]="['/chat/list']">Mes conversations</a>
+  </div>
+  <h1>Mes matchs</h1>
+
+  <div class="carte-container">
+    <ul class="cartes" *ngIf="connectedUser !== null">
+      <li class="cartes-item" *ngFor="let user of matches; index as i">
+          
+        <div class="carte" (click)="showStyle = !showStyle">
+          <div class="additional" [style.height]="getHeight()">
+            <div class="carte-img bgc-light-blue">
+              <img [src]="user.profilePic" alt="Photo de {{ user.firstname }}" (error)="loadDefault(i)" />
+            </div>
+            <div
+              class="hover-content bgc-blue"
+              *ngIf="user.Gender.name === 'Masculin'"
+            >
+            <div class="title-box">
+              <h2 class="carte-title title-light">{{ user.firstname }}</h2>
+              <span class="user-city title-light"> - {{ user.City.name }}</span>
+            </div>
+              <div class="carte-tag">
+                <span class="txt-light bgc-orange tag-span" *ngFor="let tag of user.Tags;">{{ tag.name }}</span>
+              </div>
+              <button
+                type="button"
+                mdbBtn
+                class="bgc-orange"
+                mdbWavesEffect
+                [routerLink]="['/chat/list',{outlets: {conversation : ['chat', user.id] }}]"
+              >
+              messagerie
+            </button>
+          </div>
+          <div
+          class="hover-content bgc-orange"
+          *ngIf="user.Gender.name === 'Féminin'"
+          >
+          <div class="title-box">
+            <h2 class="carte-title">{{ user.firstname }}</h2>
+            <span class="user-city"> - {{ user.City.name }}</span>
+          </div>
+              <div class="carte-tag">
+                <span class="txt-light bgc-blue tag-span" *ngFor="let tag of user.Tags">{{ tag.name }}</span>
+              </div>
+              <button
+                type="button"
+                mdbBtn
+                class="bgc-blue"
+                mdbWavesEffect
+                [routerLink]="['/chat/list',{outlets: {conversation : ['chat', user.id] }}]"
+
+              >
+                messagerie
+              </button>
+            </div>
+            <div
+              class="hover-content bgc-green"
+              *ngIf="user.Gender.name === 'Autre'"
+            >
+            <div class="title-box">
+              <h2 class="carte-title title-light">{{ user.firstname }}</h2>
+              <span class="user-city"> - {{ user.City.name }}</span>
+            </div>
+              <div class="carte-tag">
+                <span class="txt-light bgc-blue tag-span" *ngFor="let tag of user.Tags;">{{ tag.name }}</span>
+              </div>
+              <button
+                type="button"
+                mdbBtn
+                class="bgc-blue"
+                mdbWavesEffect
+                [routerLink]="['/chat/list',{outlets: {conversation : ['chat', user.id] }}]"
+
+              >
+                messagerie
+              </button>
+            </div>
+          </div>
+
+          <div class="general">
+            <div
+              class="carte-content bgc-blue"
+              *ngIf="user.Gender.name === 'Masculin'"
+            >
+            <div class="title-box">
+              <h2 class="carte-title title-light">{{ user.firstname }}</h2>
+              <span class="user-city title-light"> - {{ user.City.name }}</span>
+            </div>
+              <p class="carte-text txt-light">
+                Si vous ne pensez pas que je suis le coloc le plus parfait du
+                monde après ce paragraphe j'estimerais que vous n'êtes pas le
+                couteau le plus affuté du tiroir. Si tel est le cas, vous pouvez
+                passer votre chemin.
+              </p>
+              <button
+                type="button"
+                mdbBtn
+                class="bgc-orange"
+                mdbWavesEffect
+                [routerLink]="['/chat/list',{outlets: {conversation : ['chat', user.id] }}]"
+
+              >
+                messagerie
+              </button>
+              <p class="hover-hint hover-hint-light">Survole pour afficher les tags</p>
+            </div>
+            <div
+              class="carte-content bgc-orange"
+              *ngIf="user.Gender.name === 'Féminin'"
+            >
+            <div class="title-box">
+              <h2 class="carte-title">{{ user.firstname }}</h2>
+              <span class="user-city"> - {{ user.City.name }}</span>
+            </div>
+              <p class="carte-text">
+                Si vous ne pensez pas que je suis le coloc le plus parfait du
+                monde après ce paragraphe j'estimerais que vous n'êtes pas le
+                couteau le plus affuté du tiroir. Si tel est le cas, vous pouvez
+                passer votre chemin.
+              </p>
+              <button
+                type="button"
+                mdbBtn
+                class="bgc-blue"
+                mdbWavesEffect
+                [routerLink]="['/chat/list',{outlets: {conversation : ['chat', user.id] }}]"
+
+              >
+                messagerie
+              </button>
+              <p class="hover-hint">Survole pour afficher les tags</p>
+            </div>
+            <div
+              class="carte-content bgc-green"
+              *ngIf="user.Gender.name === 'Autre'"
+            >
+            <div class="title-box">
+              <h2 class="carte-title">{{ user.firstname }}</h2>
+              <span class="user-city"> - {{ user.City.name }}</span>
+            </div>
+              <p class="carte-text">
+                Si vous ne pensez pas que je suis le coloc le plus parfait du
+                monde après ce paragraphe j'estimerais que vous n'êtes pas le
+                couteau le plus affuté du tiroir. Si tel est le cas, vous pouvez
+                passer votre chemin.
+              </p>
+              <button
+                type="button"
+                mdbBtn
+                class="bgc-blue"
+                mdbWavesEffect
+                [routerLink]="['/chat/list',{outlets: {conversation : ['chat', user.id] }}]"
+              >
+                messagerie
+              </button>
+              <p class="hover-hint">Survole pour afficher les tags</p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,135 @@
+@import "../../../../../styles.scss";
+
+.main-container {
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+  background-image: url("/assets/img/login-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  filter: brightness(65%);
+  height: 100vh;
+}
+
+.register-box {
+  width: 600px;
+  padding: 20px 40px;
+  box-shadow: 5px 5px 15px 5px #252525;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.842);
+  position: absolute;
+  top: 104px;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+h1 {
+  font-size: 1.8em;
+  letter-spacing: -1px;
+  margin: 20px 0 0 0;
+}
+
+.form-hint {
+    text-align: center;
+    font-weight: normal;
+    font-size: 0.8em;
+    width: 100%;
+}
+
+button {
+  margin: 0px !important;
+  width: 100%;
+}
+
+div {
+  font-weight: 600;
+}
+
+.md-form {
+  margin-bottom: 0px;
+}
+
+.firstname-label {
+  position: absolute;
+  top: -25px;
+}
+
+.lastname-label {
+  position: absolute;
+  top: 35px;
+}
+
+.birthdate-label {
+  position: absolute;
+  top: 125px;
+}
+
+.email-label {
+  position: absolute;
+  top: 160px;
+}
+
+.password-label {
+  position: absolute;
+  top: 245px;
+}
+
+.sexe-label {
+  position: absolute;
+  top: 300px;
+}
+
+.city-label {
+  position: absolute;
+  top: 380px;
+}
+
+.md-form input[type="email"] {
+  margin-top: 23px;
+}
+
+.gender-select {
+  margin-top: 30px;
+}
+
+.city-select {
+  margin-top: 20px;
+}
+
+.pp-label {
+  top: -30px;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+  content: "Parcourir";
+}
+
+.md-form input {
+  margin-bottom: 20px;
+}
+
+a {
+  color: #093180 !important;
+}
+
+p {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.reg-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+}
+
+a {
+  color: #093180 !important;
+  border-bottom: 2px solid #093180;
+}
+
+a:hover {
+  border-bottom: 2px solid #ff7104;
+}

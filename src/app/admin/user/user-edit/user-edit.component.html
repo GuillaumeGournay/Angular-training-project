@@ -1,0 +1,80 @@
+<div class="main-container">
+    <div class="row d-flex justify-content-center mt-4">
+        <div class="col-xl-6 col-md-9 col-12">
+            <h2>Editer l'utilisateur {{editedUser.firstname}} {{editedUser.lastname}}</h2>
+            <button type="button" mdbBtn class="relative waves-light bgc-blue back-button" mdbWavesEffect
+                [routerLink]="['/admin/users']">
+                revenir à la liste
+            </button>
+
+            <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                <div class="md-form">
+                    <input mdbInput type="text" name="firstname" autocomplete="off" placeholder="John" id="form2" class="form-control"
+                        formControlName="firstname" />
+                    <label for="form2" class="">Prénom</label>
+                </div>
+
+                <div class="md-form">
+                    <input mdbInput type="text" name="lastname" autocomplete="off" placeholder="Doe" id="form1" class="form-control"
+                        formControlName="lastname" />
+                    <label for="form1" class="">Nom</label>
+                </div>
+
+                <div class="md-form">
+                    <input mdbInput type="text" name="email" autocomplete="off" placeholder="john.doe@gmail.com" id="form3" class="form-control"
+                        formControlName="email" />
+                    <label for="form3" class="">Email </label>
+                </div>
+
+                <div class="md-form">
+                    <input mdbInput type="date" name="birthdate" autocomplete="off" id="form4" class="form-control"
+                        formControlName="birthdate" />
+                    <label for="form4" class="">Date de naissance</label>
+                </div>
+
+                <div class="md-form">
+                    <input mdbInput type="password" name="password" autocomplete="off" id="form5" class="form-control"
+                        formControlName="password" />
+                    <label for="form5" class="password-label">Mot de passe </label>
+                </div>
+
+                <div class="md-form">
+                    <select class="browser-default custom-select gender-input" name="genderId" formControlName="genderId" id="form6">
+                        <option *ngFor="let gender of genders" [ngValue]="gender.id">{{gender.name}}</option>
+                    </select>
+                    <label class="custom-control-label" for="form6">Sexe</label>
+                </div>
+
+                <div class="md-form">
+                    <select class="browser-default custom-select city-input" name="cityId" formControlName="cityId" id="form8">
+                        <option *ngFor="let city of cities" [ngValue]="city.id">{{city.name}}</option>
+                    </select>
+                    <label class="custom-control-label select-label" for="form8">Ville</label>
+                </div>
+
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="form9" [value]="isAdmin"
+                        (change)="onCheckBoxChange($event)">
+                    <label class="custom-control-label" for="form9">Administrateur</label>
+                </div>
+
+                <div class="md-form">
+                    <div class="input-group">
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="form7" (change)="onFileChange($event)"
+                                name="profilePic" formControlName="profilePic">
+                            <label class="custom-file-label pp-label" for="form7">Photo de profil : {{ fileDataName }}</label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- <input type="file" name="profilePic" formControlName="profilePic" (change)="onFileChange($event)"> -->
+
+                <button type="submit" mdbBtn class="relative waves-light bgc-blue send-button" mdbWavesEffect [disabled]="!form.valid">
+                    éditer
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>

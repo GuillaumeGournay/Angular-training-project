@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+
+footer {
+    position: relative;
+
+}
+
+h1, .fb-light, .twt-light, .insta-light{
+    text-shadow: 3px 3px 3px orangered;
+}
+
+h3 {
+    text-shadow: 2px 2px 2px black;
+}
+
+.footer-list:hover{
+   color: #FF7104;
+}
+
+.fb-light {
+    width: 31px;
+    height: 31px;
+}
+
+.fb-light:hover {
+    background-color: orangered;
+}
+
+.txt-light {
+    width: 30px;
+    height: 30px;
+    margin: 20px;
+}
+
+.footer-bottom {
+    color: rgba(255, 255, 255, 0.6) !important;
+    font-weight: normal !important;
+}
+
+.txt-light:hover {
+    background-color: orangered;
+}
+
+.insta-light {
+    width: 30px;
+    height: 30px;
+}
+
+.insta-light:hover {
+    background-color: orangered;
+}

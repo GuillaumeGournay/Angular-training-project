@@ -1,0 +1,235 @@
+@import "../../../../styles.scss";
+
+// GENERAL
+.main-container {
+  min-height: 65vh;
+  margin: 0;
+  padding: 30px 0 50px 0;
+  background-image: url('../../../../assets/img/matches-bg-dark.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.carte-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: #FF7104 !important;
+  text-shadow: 3px 3px 6px #000000;
+  border-bottom: 2px solid #FF7104;
+}
+
+a:hover {
+  color: #093180 !important;
+  border-bottom: 2px solid #093180;
+  text-shadow: none;
+}
+
+li {
+  list-style: none;
+}
+
+p {
+  margin: 0 !important;
+  line-height: normal;
+}
+
+h1 {
+  margin: 30px 0;
+  text-shadow: 3px 3px 6px #000000;
+  color: #FF7104 !important;
+}
+
+h2 {
+  margin: 0 !important;
+}
+
+.btn {
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+.bgc-dark-orange {
+  background-color: rgb(241, 105, 1) !important;
+}
+
+.bgc-light-blue {
+  background-color: #0c3992 !important;
+}
+
+.bgc-green {
+  background-color: #0fa200;
+}
+
+.bgc-dark-green {
+  background-color: rgb(17, 150, 2);
+}
+
+.sub-nav {
+  width: 275px;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto 30px auto;
+}
+
+// GENERAL STYLE USER CARDS
+.cartes {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  width: 380px;
+  margin: 0;
+  padding: 0;
+}
+
+.cartes-item {
+  padding: 10px;
+  display: inline-block;
+  min-width: 380px;
+}
+
+.carte {
+  height: 520px;
+  box-shadow: 0px 0px 20px 0px #000000;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carte-img {
+  width: 100%;
+  height: 225px;
+  position: relative;
+}
+
+img {
+  height: 225px;
+  width: 100%;
+  vertical-align: middle;
+}
+
+// DEFAULT CONTENT
+.carte-content {
+  padding: 15px 20px 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 295px;
+}
+
+.carte .general {
+  width: 100%;
+  height: 295px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  box-sizing: border-box;
+}
+
+.title-box {
+  text-align: center;
+}
+
+.carte-title {
+  margin: 0 !important;
+  display: inline-block;
+}
+
+.user-city {
+  font-size: 1.8em;
+  letter-spacing: -1px;
+}
+
+.hover-hint {
+  font-size: 0.6em;
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  color: #424242; 
+}
+
+.hover-hint-light {
+  color: rgb(207, 207, 207);
+}
+
+// ON HOVER CONTENT 
+.carte .additional {
+  position: absolute;
+  height: 225px;
+  width: 100%;
+  transition: height 0.4s ease-out;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.carte:hover .additional {
+  height: 100%;
+  border-radius: 0 6px 6px 0;
+}
+
+.hover-content {
+  padding: 15px 20px 30px 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 295px;
+}
+
+.carte-tag {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.tag-span {
+  font-weight: 600;
+  font-size: 0.81rem;
+  margin: 5px 5px;
+  padding: 4px 10px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+// RESPONSIVE
+@media screen and (max-width: 450px) {
+  .cartes-item {
+    width: 95%;
+    min-width: auto;
+    margin: 0;
+  }
+
+  .carte-tag {
+    margin-bottom: 5px !important;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cartes {
+    width: 760px;
+  }
+}
+
+@media screen and (min-width: 1140px) {
+  .cartes {
+    width: 1140px;
+  }
+}
+

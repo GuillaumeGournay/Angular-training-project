@@ -1,0 +1,48 @@
+<main>
+  <header>
+    <div class="img-box">
+      <img class="user-img" [src]="userTwo.profilePic" alt="" />
+    </div>
+    <h2 class="chat-user">{{ userTwo.firstname }}</h2>
+  </header>
+  <ul class="chat">
+    <div *ngFor="let message of previousmessages">
+      <li class="you" *ngIf="message.senderId != connectedUserId">
+        <div class="entete">
+          <span class="status orange"></span>
+          <h2>{{ userTwo.firstname }}</h2>
+        </div>
+
+        <div class="message">
+          {{ message.content }}
+        </div>
+      </li>
+      <li class="me" *ngIf="message.senderId == connectedUserId">
+        <div class="entete">
+          <span class="status blue"></span>
+          <h2>{{ connectedUser.firstname }}</h2>
+        </div>
+
+        <div class="message">
+          {{ message.content }}
+        </div>
+      </li>
+    </div>
+  </ul>
+  <footer>
+    <div>
+      <span *ngIf="otherIsTyping" [@simpleFadeAnimation]="'in'"
+        >Other is Typing . . .</span
+      >
+    </div>
+    <textarea
+      placeholder="Entre ton message"
+      [(ngModel)]="message.content"
+      (keyup)="$event.keyCode == 13 && sendMessage()"
+      (input)="updateTyping()"
+    ></textarea>
+    <!-- <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_picture.png" alt="">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1940306/ico_file.png" alt=""> -->
+    <a (click)="sendMessage()">Envoyer</a>
+  </footer>
+</main>

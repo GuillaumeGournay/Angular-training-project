@@ -1,0 +1,33 @@
+<div class="main-container">
+    <div class="row d-flex justify-content-center mt-4">
+      <div class="col-xl-6 col-md-9 col-12">
+          <h2>Ajouter un temoignage</h2>
+          <button
+            type="button"
+            mdbBtn
+            class="relative waves-light bgc-blue back-button"
+            mdbWavesEffect
+            [routerLink]="['/admin/testimonies']"
+          >
+            revenir à la liste
+          </button>
+  
+        <form (ngSubmit)="onSubmit()">
+            <div class="form-group shadow-textarea">
+                <label for="content">Témoignage</label>
+                <textarea [(ngModel)]="testimony.content" [ngModelOptions]="{standalone: true}" class="form-control z-depth-1" id="content" rows="3" placeholder="Ecrivez votre témoignage ici..."></textarea>
+
+          
+                <button
+                type="submit"
+                mdbBtn
+                class="relative waves-light bgc-blue send-button"
+                mdbWavesEffect
+                >
+                ajouter
+                </button>
+            </div>
+        </form>
+      </div>
+  </div>
+</div>
