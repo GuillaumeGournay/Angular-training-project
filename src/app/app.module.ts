@@ -10,7 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { BaseUrlInterceptor } from './interceptors/base-url.interceptor';
 import { JwtInterceptor } from './interceptors/jwt.interceptor'
-import { API_URL } from './interceptors/base-url.interceptor';
+// import { API_URL } from './interceptors/base-url.interceptor';
 import { environment } from '../environments/environment';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -58,14 +58,14 @@ import { ConditionsGeneralesComponent } from './components/conditions-generales/
     MDBBootstrapModule.forRoot()
   ],
   providers: [
-    {
-      provide: API_URL,
-      useValue: environment.apiURL
-    },
+    // {
+    //   provide: API_URL,
+    //   useValue: environment.apiURL
+    // },
     {
       provide: HTTP_INTERCEPTORS, 
       useClass: BaseUrlInterceptor,
-      deps: [API_URL],
+      // deps: [API_URL],
       multi: true
     },
     {
@@ -75,7 +75,7 @@ import { ConditionsGeneralesComponent } from './components/conditions-generales/
     },
     {
       provide: ChatService,
-      deps: [API_URL]
+      // deps: [API_URL]
     }
   ],
   bootstrap: [AppComponent]
